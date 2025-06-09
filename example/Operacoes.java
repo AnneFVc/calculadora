@@ -1,7 +1,7 @@
 package org.example;
 
-import java.util.Stack;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Operacoes {
 
