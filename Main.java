@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Operacoes op = new Operacoes();
-        Scanner scanner = new Scanner(System.in);
+        Operacoes op = new Operacoes(); // Instância da classe que fará o cálculo da expressão
+        Scanner scanner = new Scanner(System.in); // Para ler entrada do usuário
 
         System.out.println("=== Calculadora Pós-Fixada ===");
         System.out.println("Digite expressões em notação pós-fixada separadas por espaço.");
@@ -29,19 +29,20 @@ public class Main {
                 continue;
             }
 
+            // Criação da fila dinâmica com os tokens da expressão
             Queue<String> expressaoPosfixa = new LinkedList<>();
             for (String token : entrada.split("\\s+")) {
-                expressaoPosfixa.add(token);
+                expressaoPosfixa.add(token); // Adiciona cada token na fila
             }
 
             try {
-                double resultado = op.calcularPosfixa(expressaoPosfixa);
+                double resultado = op.calcularPosfixa(expressaoPosfixa); // Processa a fila com uma pilha
                 System.out.println("Resultado: " + resultado);
             } catch (Exception e) {
-                System.out.println("Erro no cálculo: " + e.getMessage());
+                System.out.println("Erro no cálculo: " + e.getMessage()); // Exibe erro detalhado
             }
         }
 
-        scanner.close();
+        scanner.close(); // Fecha o scanner ao final
     }
 }
